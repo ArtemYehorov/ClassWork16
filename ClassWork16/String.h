@@ -66,6 +66,7 @@ public:
 	// метода SetLength не должно быть!
 
 	void Concat(const String& another);
+	String Concat(string& another);
 	void Concat(int num);
 	bool Contains(const String& another) const;
 	int LastIndexOf(char symbol) const;
@@ -79,4 +80,11 @@ public:
 	void ShowInfo() const;
 	bool EndsWith(const String& another) const;
 	bool StartsWith(const String& another) const;
+	void Ensure(size_t required);
+
+	String operator+(const String& other);
+	String& operator+=(const String& other);
+	String operator+(const char* text);
+	String& operator+=(const char* text);
+	char& operator[](int index);
 };
