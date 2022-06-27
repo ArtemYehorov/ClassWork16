@@ -31,38 +31,6 @@ public:
 	void GetLine();
 	char GetCharAt(unsigned int index);
 
-	/*string NumberToString(double Number)
-	{
-		ostringstream ss;
-		ss << Number;
-		return ss.str();
-	}*/
-	/*void Concat(double num)
-	{
-		string copy = text;
-		string s = NumberToString(num);
-
-		int a = 0;
-		do
-		{
-			num = num - 1;
-			a++;
-		} while (num > 0);
-		delete[] this->text;
-
-		capacity += a;
-
-		this->text = new char[capacity];
-		copy.append(s);
-
-		for (int i = 0; i < length; i++)
-		{
-			text[i] = copy[i];
-		}
-		length += a;
-		text[length] = '\0';
-	}*/
-
 	// метода SetLength не должно быть!
 
 	void Concat(const String& another);
