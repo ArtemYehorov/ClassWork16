@@ -443,3 +443,49 @@ char& String::operator[](int index)
 		throw exception("out of memory!!!");
 	}
 }
+
+String& String::operator=(const String& other)
+{
+	if (text == other.text) return *this;
+	capacity = other.capacity;
+	length = other.length;
+	text = new char[capacity];
+
+	for (int i = 0; i < length; i++)
+		text[i] = other.text[i];
+	text[length] = '\0';
+
+	return *this;
+}
+
+String& String::operator=(const char* str)
+{
+	if (strlen(str) < capacity) 
+	{
+
+		for (int i = 0; i < strlen(str); i++)
+		{
+			text[i] = str[i];
+		}
+		text[strlen(str)] = '\0';
+		length = strlen(str);
+	}
+	else 
+	{
+		while (capacity <= strlen(str))
+		{
+			capacity += 80;
+		}
+		delete[] text;
+		text = new char[capacity];
+
+		for (int i = 0; i < strlen(str); i++)
+		{
+			text[i] = str[i];
+		}
+		text[strlen(str)] = '\0';
+		length = strlen(str);
+	}
+
+	return *this;
+}
