@@ -51,7 +51,6 @@ public:
 	void Ensure(size_t required);
 
 	String& operator=(const String& other);
-	String& operator=(const char* str);
 	String operator+(const String& other);
 	String& operator+=(const String& other);
 	String operator+(const char* text);
